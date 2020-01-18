@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Link to css -->
+  <link href="reg.css" rel="stylesheet" type="text/css">
+
+    <title>Register User</title>
+  </head>
+  <body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Cpanel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Accounts</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Employee</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+
+
+    <div class="row">
+<!-- LEFT SIDE -->
+      <div class ="col md-6 px-5 ">
+        <div class="leftSide d-flex justify-content-centre align-items-centre">
+          <form class="container mt-5">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+<span class="border-right"></span>
+<!-- RIGHT SIDE -->
+      <div class ="col md-6 ">
+
+        <div class="rightSide d-flex justify-content-centre align-items-centre">
+
+          <div class="container mt-5">
+
+            <form class="container " method="POST" action="account/login?">
+              {{csrf_token}}
+             <h2>Create Account :</h2>
+              <div class="form-group my-2">
+                <label for="fullName">Full Name :</label>
+                <input type="form-text" class="form-control" name="fullName" aria-describedby="emailHelp">
+              </div>
+             
+
+              <div class="form-group my-2">
+                <label for="contactNo"> Contact Number :</label>
+                <input type="text" class="form-control" name="contactNo" aria-describedby="emailHelp">
+              </div>
+                
+              <div class="form-group my-2">
+                <label for="panNo"> PAN Number :</label>
+                <input type="text" class="form-control" name="panNo" aria-describedby="emailHelp">
+              </div>
+               <div class="form-group my-2">
+                <label for="govIdtype"> Governement ID :</label>
+                <select class="form-control form-control-sm" name="govIdtype">
+                  <option>Aadhar</option>
+                  <option>Driving license</option>
+                  <option>Other option</option>
+                </select>
+                <input type="text" class="form-control" name="govId" aria-describedby="emailHelp">
+              </div>
+                
+               <div class="form-group my-2">
+                <label for="exampleInputEmail1"> Admin Under :</label>
+                <input type="id" class="form-control" name="mentor" aria-describedby="emailHelp">
+              </div>
+                
+              <div class="form-group my-2">
+                <label for="Password1">Password</label>
+                <input type="password" class="form-control my-2" name="Password1" placeholder="Enter password">
+                
+                <input type="password" class="form-control my-2" name="Password2" placeholder="Re-enter Password ">
+              </div>
+
+              <div class="form-group my-2">
+                <label> Services :</label>
+                <button type="button" class="btn btn-outline-secondary">add service</button>
+                <select class="form-control form-control-sm my-2" name="serviceType">
+                  <option>Type Service 1</option>
+                  <option>Type Service 2</option>
+                  <option>Type Service 3</option>
+                </select>
+                <label>Select Rights</label>
+                <div class="input-group mb-3" mt-4>
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input" name="readCheck">
+                    </div>
+                  </div>
+                  <label>Read</label>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input" name="modifyCheck">
+                    </div>
+                  </div>
+                  <label>Modify</label>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input" name="deleteCheck">
+                    </div>
+                  </div>
+                  <label>Delete</label>
+                </div>
+               </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+      <footer class="bg-dark">
+        <p class="container copyright text-muted">Copyright &copy; CRM 2020</p><br>
+      </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
